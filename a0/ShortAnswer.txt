@@ -1,0 +1,59 @@
+Enter your responses inline below and push this file to your private GitHub
+repository.
+
+
+1. Assume I plan to use the friend_overlap function above to quantify the
+similarity of two users. E.g., because 344 is larger than 1, I conclude that
+Jill Stein and Gary Johnson are more similar than Hillary Clinton and Donald
+Trump.
+
+How is this approach misleading? How might you fix it?
+- The friend_overlap function gives you the count of common frieds that two users share amongsnt them.  This function is used to quantify the similarity of two users. 
+This approach looks misleading because , we consider the similarity of two users by the count of the common friends that they have. But the ideal approach would be when if friends of one user A and friends of other user B will have some common friends between them together making an community of A and B and their friends. Hence then they can be called similiar. 
+- For Ex : If user A has 100 friends and User B has 300 friends, then they can be considered as similiar if those 100 & 300 share some common friends amongsnt them. In this way it can be stated that the User A and User B are more similar.
+- Hence we can fix the above misleading approach by making the similarity feature considering the count of user's common friends and also the user's friends of friend that is the two level filtering which will make in one community.   
+
+
+
+
+
+
+2. Looking at the output of your followed_by_hillary_and_donald function, why
+do you think this user is followed by both Hilary Clinton and Donald Trump,
+who are rivals? Do some web searches to see if you can find out more
+information.
+
+- The common user followed by hillary clinton and donald trump is 'magicjohnson'. 'magicjohnson' is an American retired professional basketball player who played for LA Lakers. 
+- The Celebrity Apperentice is one of the american television reality game show which was previously hosted and produced by the current presidential candidate Donald Trump. After dropping presidential hopeful Donald Trumph, Magic Johnson is considered to be the potiential new host for the show. Hence this seems to be one reason for both sharing their twitter accounts with each other.
+- Also when it comes to Hillary clinton following magicJohnson , he prefers clinton over the republican billionare trump. In mid June 2016, Clinton released a long list of prominient business leaders along with the basketball hall of fame magicjohnson. Hence it seems obvious for Hillary Clinton to follow magicjohnson.
+
+
+
+
+
+
+3. There is a big difference in how many accounts each candidate follows (Gary
+Johnson follows over 3K accounts, while Donald Trump follows less than
+50). Why do you think this is? How might that affect our analysis?
+
+- Donald Trump has already reached people around the world due to the amount of followers that he has . While on the contrary to make a similar impact, Gary Johnson follows more number of users to reach the people along with his own followers.
+- Donald trump influences many people due to the number of followers he has. Hence the number of users he follows is less as every user he follows will be taken note by all his followers and which can impact the likes and dislikes of his followers. On the contrary Gary Johnson has less followers compared to donald trumph. Hence the users he'll follow will not be an influence on his followers.
+- If Donald trmumph starts following more people and since both gary and donald are politicians,they might have more common friends of friends. This would make both the users more similar which we know is a contradiction.
+
+
+
+
+
+
+4. The follower graph we've collected is incomplete. To expand it, we would
+have to also collect the list of accounts followed by each of the
+friends. That is, for each user X that Donald Trump follows, we would have to
+also collect all the users that X follows. Assuming we again use the API call
+https://dev.twitter.com/rest/reference/get/friends/ids, how many requests will
+we have to make? Given how Twitter does rate limiting
+(https://dev.twitter.com/rest/public/rate-limiting), approximately how many
+minutes will it take to collect this data?
+
+- Taking an example of Donald trumph, he has 42 friends. If we have to find friends of these 42 friends then we would need 42 twitter friend/ids request more. On looking on the twitter rate limiting for friends/ids , I found that there is a  limit of 15 request per 15 mins window. Thus based on this, to make 42 such request we would need approximate 45 mins . This is calculated as (42/15) = 3 windows and each window takes 15 mins. 
+- Thus for any candidate , if we want to find the extra time that it would take, the calculation will be (no_of_frnds/15) = approx no of windows .
+ Multiply this no of window by 15 to get the approx time taken to complete the request.
